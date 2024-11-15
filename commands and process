@@ -1,0 +1,26 @@
+nano Dockerfile  #add content
+nano Dokcerfile-db #add content
+nano docker-compose #add content 
+nano index.php #add content
+
+#make sure index.php environment variables match with the docker compose file and index.php table name match with uder container database table
+docker-compose build
+docker-compose up -d 
+docker ps
+docker exec -it <containeid data base> bash
+mysql -u user -p
+SHOW DATABASES;
+USE <data base name>;
+SHOW TABLES;
+#THIS TABLE NAME SHOULD MATCH WITH index.php TABLE NAME.
+
+docker-compose down: Stop the services and remove containers.
+docker-compose down -v: Stop the services and remove containers and volumes.
+docker-compose logs: View logs for the services.
+docker-compose ps: View the running services.
+
+URL: http://127.0.0.1:8082/public/
+URL: http://127.0.0.1:8082/index.php
+
+docker network ls 
+docker inspect <network id> #it will show that both container is running on sma network 
